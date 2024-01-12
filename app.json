@@ -1,0 +1,199 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.basvanderploeg.obs",
+  "version": "1.0.2",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#1B2C71",
+  "homepage": "https://basvanderploeg.nl/homey/",
+  "support": "mailto:homeyapp@basvanderploeg.nl",
+  "homeyCommunityTopicId": 86619,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "OBS Studio",
+    "nl": "OBS Studio"
+  },
+  "description": {
+    "en": "Automate your video recording and live streaming",
+    "nl": "Automatiseer je video-opname en live streaming"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Bas van der Ploeg"
+  },
+  "flow": {
+    "actions": [
+      {
+        "title": {
+          "en": "Switch Scene",
+          "nl": "Schakel Scène"
+        },
+        "titleFormatted": {
+          "en": "Switch to [[sceneNameText]] scene",
+          "nl": "Schakel naar [[sceneNameText]] scène"
+        },
+        "hint": {
+          "en": "Switch to another scene.",
+          "nl": "Schakel naar een andere scène."
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "sceneNameText",
+            "title": {
+              "en": "Scene Name",
+              "nl": "Scène-naam"
+            },
+            "placeholder": {
+              "en": "Scene Name",
+              "nl": "Scène-naam"
+            }
+          }
+        ],
+        "id": "change-scene"
+      },
+      {
+        "title": {
+          "en": "Switch Scene",
+          "nl": "Schakel Scène"
+        },
+        "titleFormatted": {
+          "en": "Switch to [[sceneNameTextAutocomplete]] scene",
+          "nl": "Schakel naar [[sceneNameTextAutocomplete]] scène"
+        },
+        "hint": {
+          "en": "Switch to another scene.",
+          "nl": "Schakel naar een andere scène."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "sceneNameTextAutocomplete",
+            "title": {
+              "en": "Selected Scene Name",
+              "nl": "Geselecteerde Scène-naam"
+            },
+            "placeholder": {
+              "en": "Scene Name",
+              "nl": "Scène-naam"
+            }
+          }
+        ],
+        "id": "change-scene-autocomplete"
+      },
+      {
+        "title": {
+          "en": "Start recording",
+          "nl": "Opename starten"
+        },
+        "titleFormatted": {
+          "en": "Start recording",
+          "nl": "Opname starten"
+        },
+        "id": "start-record"
+      },
+      {
+        "title": {
+          "en": "Start streaming",
+          "nl": "Steamen starten"
+        },
+        "titleFormatted": {
+          "en": "Start streaming",
+          "nl": "Steamen starten"
+        },
+        "id": "start-stream"
+      },
+      {
+        "title": {
+          "en": "Stop recording",
+          "nl": "Opname stoppen"
+        },
+        "titleFormatted": {
+          "en": "Stop recording",
+          "nl": "Opname stoppen"
+        },
+        "id": "stop-record"
+      },
+      {
+        "title": {
+          "en": "Stop streaming",
+          "nl": "Streamen stoppen"
+        },
+        "titleFormatted": {
+          "en": "Stop streaming",
+          "nl": "Streamen stoppen"
+        },
+        "id": "stop-stream"
+      },
+      {
+        "title": {
+          "en": "Toggle recording",
+          "nl": "Opname starten of stoppen"
+        },
+        "titleFormatted": {
+          "en": "Toggle recording",
+          "nl": "Opname starten of stoppen"
+        },
+        "hint": {
+          "en": "Toggle between starting and stopping the recording.",
+          "nl": "Schakel tussen het starten en stoppen van de opname."
+        },
+        "id": "toggle-record"
+      },
+      {
+        "title": {
+          "en": "Toggle streaming",
+          "nl": "Streamen starten of stoppen"
+        },
+        "titleFormatted": {
+          "en": "Toggle streaming",
+          "nl": "Streamen starten of stoppen"
+        },
+        "hint": {
+          "en": "Toggle between starting and stopping the stream.",
+          "nl": "Schakel tussen het starten en stoppen van de stream."
+        },
+        "id": "toggle-stream"
+      },
+      {
+        "title": {
+          "en": "Trigger hotkey",
+          "nl": "Activeer sneltoets"
+        },
+        "titleFormatted": {
+          "en": "Trigger [[hotkeyNameTextAutocomplete]] hotkey",
+          "nl": "Activeer [[hotkeyNameTextAutocomplete]] sneltoets"
+        },
+        "hint": {
+          "en": "Trigger a hotkey in OBS Studio.",
+          "nl": "Activeer een sneltoets OBS Studio."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "hotkeyNameTextAutocomplete",
+            "title": {
+              "en": "Selected hotkey",
+              "nl": "Geselecteerde sneltoets"
+            },
+            "placeholder": {
+              "en": "Hotkey",
+              "nl": "Sneltoets"
+            }
+          }
+        ],
+        "id": "trigger-hotkey-autocomplete"
+      }
+    ]
+  }
+}

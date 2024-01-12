@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- The '/homey.js' script must be included in your settings view to work -->
+	<script
+	  type="text/javascript"
+	  src="/homey.js"
+	  data-origin="settings"
+	></script>
+  </head>
+  <body>
+	<header class="homey-header">
+	  <h1 class="homey-title" data-i18n="settings.title">
+		<!-- This will be filled with the translated string with key 'settings.title'. -->
+	  </h1>
+	  <p class="homey-subtitle" data-i18n="settings.subtitle">
+		<!-- This field will also be translated -->
+	  </p>
+	</header>
+	
+	
+	 
+	 <p data-i18n="settings.setup_help">Enable the WebSocket Server in OBS Studio via<br/><b>"Tools" > "obs-websocket Settings"</b>.</p>
+
+	<fieldset class="homey-form-fieldset">
+	  <legend class="homey-form-legend" data-i18n="settings.studio_settings">OBS Studio Settings</legend>
+	  
+	  <div class="homey-form-group">
+		  <label class="homey-form-label" for="obs_websocket_url" data-i18n="settings.instance_label">OBS Websocket URL</label>
+		  <input class="homey-form-input" id="obs_websocket_url" type="text" value="" placeholder="Example: ws://192.168.0.1:4455"/>
+		</div>
+
+	  <div class="homey-form-group">
+		<label class="homey-form-label" for="obs_websocket_password" data-i18n="settings.token_label">OBS Websocket Password</label>
+		<input class="homey-form-input" id="obs_websocket_password" type="text" value="" placeholder="Optional"/>
+	  </div>
+	</fieldset>
+
+	<button id="save" class="homey-button-primary-full" data-i18n="settings.save_changes">Save changes</button>
+
+	<script type="text/javascript">
+	  // a method named 'onHomeyReady' must be present in your code
+	  function onHomeyReady(Homey) {
+		// Tell Homey we're ready to be displayed
+		Homey.ready();
+	
+		var osbWebsocketURLElement = document.getElementById("obs_websocket_url");
+		var osbWebsocketPassElement = document.getElementById("obs_websocket_password");
+		var saveElement = document.getElementById("save");
+		
+		Homey.get("obs_websocket_url", function (err, obs_websocket_url) {
+		  if (err) return Homey.alert(err);
+		  osbWebsocketURLElement.value = obs_websocket_url;
+		});
+		
+		Homey.get("obs_websocket_password", function (err, obs_websocket_password) {
+		  if (err) return Homey.alert(err);
+		  osbWebsocketPassElement.value = obs_websocket_password;
+		});
+	
+
+		saveElement.addEventListener("click", function (e) {
+		  Homey.set("obs_websocket_url", osbWebsocketURLElement.value, function (err) {
+			if (err) return Homey.alert(err);
+		  });
+		  Homey.set("obs_websocket_password", osbWebsocketPassElement.value, function (err) {
+			  if (err) return Homey.alert(err);
+		  });
+		});
+	  }
+	</script>
+  </body>
+</html>

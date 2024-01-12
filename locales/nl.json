@@ -1,0 +1,11 @@
+{
+  "settings": {
+	"title": "Instellingen",
+	"subtitle": "Vul alsjeblieft de benodigde informatie in",
+	"save_changes": "Wijzigingen opslaan",
+	"studio_settings": "OBS Studio Instellingen",
+	"instance_label": "Vul de OBS WebSocket URL in (inclusief serverpoort):",
+	"token_label": "Vul het WebSocket Server wachtwoord in (optioneel): ",
+	"setup_help": "Zet de WebSocket Server aan in OBS Studio via: <br><b>\"Tools\" &rarr; \"obs-websocket Instellingen\"</b>."
+  }
+}
